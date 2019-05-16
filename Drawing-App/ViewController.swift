@@ -18,39 +18,52 @@ class ViewController: UIViewController {
     @IBAction func colorToRed(_ sender: Any) {
         ViewController.selectedColor = .red
     }
-    
     @IBAction func colorToOrange(_ sender: Any) {
         ViewController.selectedColor = .orange
     }
-    
     @IBAction func colorToYellow(_ sender: Any) {
         ViewController.selectedColor = .yellow
     }
-    
     @IBAction func colorToGreen(_ sender: Any) {
         ViewController.selectedColor = .green
     }
-    
     @IBAction func colorToBlue(_ sender: Any) {
         ViewController.selectedColor = .cyan
     }
-    
     @IBAction func colorToPurple(_ sender: Any) {
         ViewController.selectedColor = .magenta
     }
-    
-    
     @IBAction func colorToWhite(_ sender: Any) {
         ViewController.selectedColor = .white
     }
-    
     @IBAction func colorToGray(_ sender: Any) {
         ViewController.selectedColor = .gray
     }
-    
     @IBAction func colorToBlack(_ sender: Any) {
         ViewController.selectedColor = .black
     }
+    
+    var size: Int = 4
+    
+    //selecting brushess ssttufff
+    @IBAction func xlargebrush(_ sender: Any) {
+        size = 6
+    }
+    
+    @IBAction func largebrush(_ sender: Any) {
+        size = 5
+    }
+    
+    @IBAction func mediumbrush(_ sender: Any) {
+        size = 4
+    }
+    
+    @IBAction func smallbrush(_ sender: Any) {
+        size = 3
+    }
+    
+    
+    
     
     
     
@@ -167,9 +180,9 @@ class ViewController: UIViewController {
         
         let pixelBuffer = buffer.bindMemory(to: RGBA32.self, capacity: Int(imageView.bounds.width * imageView.bounds.height))
         
-        for drawX in x-5...x+5
+        for drawX in x-size...x+size
         {
-            for drawY in y-5...y+5
+            for drawY in y-size...y+size
             {
                 if drawX >= 0 && drawX < width && drawY >= 0 && drawY < height
                 {
@@ -220,9 +233,9 @@ struct RGBA32: Equatable {
     static let black   = RGBA32(red: 0,   green: 0,   blue: 0,   alpha: 255)
     static let magenta = RGBA32(red: 255, green: 0,   blue: 255, alpha: 255)
     static let yellow  = RGBA32(red: 255, green: 255, blue: 0,   alpha: 255)
-    static let cyan    = RGBA32(red: 0,   green: 255, blue: 255, alpha: 255)
+    static let cyan    = RGBA32(red: 10,   green: 30, blue: 255, alpha: 255)
     static let gray    = RGBA32(red: 120, green: 120, blue: 120, alpha: 255)
-    static let orange  = RGBA32(red: 150, green: 80, blue: 0, alpha: 255)
+    static let orange  = RGBA32(red: 255, green: 110, blue: 5, alpha: 255)
     
     static let bitmapInfo = CGImageAlphaInfo.premultipliedLast.rawValue | CGBitmapInfo.byteOrder32Little.rawValue
     
