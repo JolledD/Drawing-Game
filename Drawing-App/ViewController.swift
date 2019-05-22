@@ -150,7 +150,7 @@ class ViewController: UIViewController {
     
     func createNewImage(width: Int, height: Int) -> UIImage?
     {
-        return UIImage(color: .red, size: CGSize(width: width, height: height))
+        return UIImage(color: .white, size: CGSize(width: width, height: height))
     }
     
     func setImagePixels(image: UIImage, x: Int, y: Int, totalWidth: Int, totalHeight: Int) -> UIImage?
